@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login Page</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css "/>
+<style>
+    * {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+    
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+		"Helvetica Neue", sans-serif;
+	font-size: 1rem;
+	line-height: 1.7;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+    font-family: Arial, sans-serif;
+        background: linear-gradient(to bottom left, #33ccff 0%, #ff99cc 100%);
+        margin: 0;
+        background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+        padding: 0;
+}
+
+.container {
+	background-color: #ffffff;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+	max-width: 300px;
+	margin: 10px auto;
+	padding: 1rem;
+    max-width: 400px;
+    margin: 100px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border: #000 3px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      
+    
+}
+
+h1 {
+	padding: 5px 0;
+	font-size: 1.2rem;
+	color: #111;
+	text-align: center;
+	
+}
+
+input {
+	padding: 10px;
+	font-size: 14px;
+	border-radius: 5px;
+	outline: none;
+	width: 100%;
+	border: solid 1px #ccc;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+form i {
+	margin-left: -30px;
+	cursor: pointer;
+}
+
+button {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 3%;
+    background: #007bff;
+    border: none;
+    color: #fff;
+    font-size: 14px;
+	border-radius: 5px;
+}
+
+button:hover {
+    background: #0069d9;
+    cursor: pointer;
+}
+.submit{
+	margin-top:10px;
+}
+ 
+    h2 {
+        font-family: 'Times New Roman', Times, serif;
+        text-align: center;
+        color: #333;
+    }
+    input[type="email"],
+    input[type="password"]
+     {
+        width: 100%;
+        padding: 10px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+    input[type="submit"]
+    {
+        width: 100%;
+        padding: 10px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        align-items: center;
+    }
+    input[type="submit"] {
+        background-color: #4BAAC8;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+    input[type="submit"]:hover {
+        background-color: #45a049;
+    }
+    input[type="button"] {
+        width: 50%;
+        padding: 10px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        align-items: center;
+    }
+    input[type="button"] {
+        background-color: #6ac26f;
+        color: white;
+        border: black;
+        cursor: pointer;
+    }
+    input[type="button"]:hover {
+        background-color: #227226;
+    }
+    .separator {
+        margin: 20px 0;
+        border-bottom: 1px solid #ccc;
+        text-align: center;
+        font-weight: bold;
+    }
+    .social {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .social button {
+        width: 48%;
+        padding: 8px;
+        border-radius: 6px;
+        cursor: pointer;
+    }
+    .social button.google {
+        background-color: #bb4f3e;
+        color: white;
+        border: none;
+    }
+    .social button.facebook {
+        background-color: #3b5998;
+        color: white;
+        border: none;
+    }
+    .pswd {
+        color: #000;
+        border: #000;
+    }
+    .pswd {
+        text-decoration: none;
+        color: rgba(0, 0, 0, 0.764);
+    }
+    .pswd:hover{
+        text-decoration: underline;
+    }
+    .input-icon i {
+        margin-left: -27px;
+            
+            color: #00000086;
+        }
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+right: -85%;
+top: -40%;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}        
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #1702ff93;
+    backdrop-filter: blur(10px);  
+    box-shadow: #ffffffdd 0 0 10px;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 10px rgb(255, 255, 255)0;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+ 
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #cccccc83;
+  backdrop-filter: blur(20px);
+  box-shadow: #000000b6 0 0 10px;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+  /* Rounded sliders */
+  .slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+ 
+.dark-mode {
+ 
+            position: relative;
+            background-image: url("img/Airplane-\ Home.jpg");
+            background-repeat: no-repeat;
+            
+            background-size: cover;
+            background-size:100% 100vh;
+            font-family: Arial, sans-serif;
+            transition: background-image 3s ease;
+           
+        .container {
+            max-width: 400px;
+            margin: 100px auto;
+            padding: 20px;
+            background-color: #2f2f2f1d;
+            border: #ffffff 10px;
+            border-radius: 25px;
+            box-shadow: 0 0 23px rgba(255, 255, 255, 0.723);
+            backdrop-filter: blur(5px);
+}
+h2 {
+       
+        color: #ffffff;
+}
+.if{
+        color: #fff;
+    }
+    .pswd {
+        text-decoration: none;
+        color: rgba(255, 255, 255, 0.764);
+    }
+    .pswd:hover {
+        text-decoration: underline;
+    }
+        .separator {
+        color: #fff;
+        }
+}
+</style>
+</head>
+<body id="bg">
+    <div class="switch">
+        <label class="switch">
+        <input type="checkbox" id="btn" onclick="myFunction()">
+        <span class="slider round"></span>
+      </label>
+      </div>
+      <script>
+        function myFunction() {
+           var element = document.body;
+           element.classList.toggle("dark-mode");
+        }
+        
+        </script>
+    <div class="container">
+    <h2>Login</h2>
+    <form><div class="input-icon">
+        <input type="email" placeholder="Email" required><i class="fa fa-envelope icon"  ></i> 
+    </div>
+        <input type="password" placeholder="Password" name="password" id="password" pattern=".{6,}" title="at least 8 or more characters"required>
+        <i class="bi bi-eye-slash" id="togglePassword"></i>
+        <script src="app.js.download"></script>
+     
+     <div >
+        <a href="search flight.htm" class="pswd">forgot password</a> 
+         </div>
+         <input type="submit" value="Log in">
+    <center> <big><div class="if">  If you have no account</big><br></div>
+         <input type="button" value="Sign up" onclick = "window.location.href='sign up.html';">
+    </form>
+    
+    <div class="separator"><i>or login with</i></div>
+    <div class="social">
+        <button class="google" onclick = "window.location.href='https://www.google.com/account';">
+            Login with <img src="https://freelogopng.com/images/all_img/1657952641google-logo-png-image.png" width="10%" height="10%"></button>
+        <button class="facebook" onclick = "window.location.href='https://www.facebook.com/account';">
+            Login with <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Facebook_Logo_2023.png/900px-Facebook_Logo_2023.png?20231011121526" width="10%"height="10%"></button>
+    </div>
+</div>
+<script>
+    const togglePassword = document.querySelector("#togglePassword");
+    const password = document.querySelector("#password");
+    
+    togglePassword.addEventListener("click", function () {
+        // toggle the type attribute
+        const type = password.getAttribute("type") === "password" ? "text" : "password";
+        password.setAttribute("type", type);
+        // toggle the icon
+        this.classList.toggle("bi-eye");
+    });
+    
+    // prevent form submit
+    const form = document.querySelector("form");
+    form.addEventListener('submit',function(e){
+        e.preventDefault();
+    });
+    </script>
+</body>
+</html>

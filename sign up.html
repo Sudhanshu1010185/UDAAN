@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign Up</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, rgb(5, 117, 230), rgb(2, 27, 121));
+    margin: 0;
+    padding: 20px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+  form {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    font-style: oblique;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+  input {
+    width: 100%;
+    margin-bottom: 10px;
+    background-color: #f7f7f7f3;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #8f8f8f;
+    border-radius: 8px;
+  }
+  button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+  }
+  button:hover {
+    background-color: #0056b3;
+  }
+  .img{
+    font-family: Comic Sans MS;
+    padding: 15px;
+    text-align: left;
+    height: "50px"; width: "50px";
+    
+  }
+  
+  /* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  right: -700px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #000000;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #000000;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+ 
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+.dark-mode {
+ 
+  form {
+    background-color: #00000000;
+    color: #fff;
+    backdrop-filter: blur(100px);
+    box-shadow: #000000b0 0 0 12px;
+  }
+  body {
+    background-color: #ffffff;
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+    background-attachment: fixed;
+  }
+  input {
+    width: 100%;
+    margin-bottom: 10px;
+    background-color: #6d6d6df3;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #656565;
+    border-radius: 8px;
+    color: aliceblue;
+  }
+}
+</style>
+</head>
+<body>
+<div class="switch">
+  <label class="switch">
+  <input type="checkbox" onclick="myFunction()">
+  <span class="slider round"></span>
+</label>
+</div>
+<script>
+  function myFunction() {
+     var element = document.body;
+     element.classList.toggle("dark-mode");
+  }
+  </script>
+<form onsubmit="return validateForm()">
+   <div class="img">
+    <img height="10%" width="10%" src="https://media.istockphoto.com/id/1137971264/vector/airplane-fly-out-logo-plane-taking-off-stylized-sign.jpg?s=612x612&w=0&k=20&c=TH1vDs4wmGnfWapq_e1XYxqzQV_qxaF4_aJWoDJyKNI=" >
+  <font size="20%"> Udaan flight </font>
+</div>
+  <label for="name">Name:</label>
+  <input type="text" id="name" name="name" required>
+
+  <label for="phone">Phone Number:</label>
+  <input type="tel" id="phone" name="phone" required>
+
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email" required>
+  
+  <label for="password">Password: at least 6 or more characters</label>
+  <input type="password" id="password" name="password" pattern=".{6,}" title="at least 6 or more characters" required>
+
+  <label for="confirmPassword">Confirm Password:</label>
+  <input type="password" id="confirmPassword" name="confirmPassword" required>
+
+  <button type="submit" >Sign Up</button>
+</form>
+
+
+<script>
+  function validateForm() {
+    var password = document.getElementById("password").value;
+    var confirmPassword = document.getElementById("confirmPassword").value;
+
+    if (password !== confirmPassword) {
+      alert("Passwords do not match. Please try again.");
+      return false;
+    }
+    return true;
+  }
+</script>
+
+</body>
+</html>
